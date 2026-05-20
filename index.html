@@ -5,352 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kabiero Academy - Where Brilliance Meets Opportunity</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap');
 
     * { margin:0; padding:0; box-sizing:border-box; }
 
     :root {
-      --gold: #C9973A;
-      --gold-light: #F0C96A;
-      --deep: #0A0F1E;
-      --deep2: #111827;
-      --deep3: #1a2235;
-      --white: #FAFAF8;
-      --muted: #8892A4;
-      --accent: #4FC3A1;
-      --accent2: #E8734A;
+      --navy-primary: #0F2537;
+      --navy-light: #1A3A54;
+      --crimson: #8B1E3F;
+      --gold: #C5A059;
+      --gold-light: #DFBA73;
+      --white: #FFFFFF;
+      --bg-cream: #FDFBF7;
+      --bg-light: #F4F6F8;
+      --text-main: #2D3748;
+      --muted: #627284;
     }
 
-    .site { font-family: 'DM Sans', sans-serif; background: var(--deep); color: var(--white); overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg-cream); color: var(--text-main); overflow-x: hidden; }
+
+    /* ACADEMIC TOP BAR */
+    .top-bar {
+      background: var(--navy-primary); color: rgba(255,255,255,0.8);
+      padding: 0.5rem 3rem; display: flex; justify-content: space-between;
+      font-size: 0.78rem; letter-spacing: 0.05em; border-bottom: 2px solid var(--gold);
+    }
+    .top-bar-links { display: flex; gap: 1.5rem; list-style: none; }
+    .top-bar-links a { color: inherit; text-decoration: none; transition: color 0.2s; cursor: pointer; }
+    .top-bar-links a:hover { color: var(--gold-light); }
 
     /* NAV */
     .nav {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 3rem; border-bottom: 1px solid rgba(201,151,58,0.15);
-      background: rgba(10,15,30,0.95); position: sticky; top: 0; z-index: 100;
+      padding: 1.25rem 3rem; background: rgba(255,255,255,0.98); 
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
     .nav-logo {
-      font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold);
-      letter-spacing: 0.05em;
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy-primary);
+      letter-spacing: -0.02em; font-weight: 900; display: flex; align-items: center; gap: 0.5rem;
     }
-    .nav-logo span { color: var(--white); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-logo span { color: var(--gold); font-weight: 700; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
-      color: var(--muted); font-size: 0.85rem; text-decoration: none; letter-spacing: 0.08em;
-      text-transform: uppercase; cursor: pointer; transition: color 0.3s;
+      color: var(--navy-light); font-size: 0.88rem; text-decoration: none; letter-spacing: 0.03em;
+      cursor: pointer; transition: color 0.3s; font-weight: 500;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--crimson); }
     .nav-cta {
-      background: var(--gold); color: var(--deep); padding: 0.6rem 1.5rem;
-      border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif;
-      font-weight: 500; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
-      cursor: pointer; transition: background 0.3s;
+      background: var(--crimson); color: var(--white); padding: 0.75rem 1.75rem;
+      border: none; border-radius: 4px; font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.3s;
     }
-    .nav-cta:hover { background: var(--gold-light); }
+    .nav-cta:hover { background: #6F1531; transform: translateY(-1px); }
 
     /* HERO */
     .hero {
-      min-height: 92vh; display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center; padding: 4rem 3rem; gap: 4rem; position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(201,151,58,0.08) 0%, transparent 60%);
-      pointer-events: none;
+      min-height: 85vh; display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center; padding: 5rem 3rem; gap: 4rem; position: relative;
+      background: linear-gradient(180deg, rgba(244,246,248,0.5) 0%, rgba(253,251,247,0.5) 100%);
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid rgba(201,151,58,0.4); padding: 0.4rem 1rem;
-      border-radius: 100px; font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em;
-      text-transform: uppercase; margin-bottom: 2rem;
+      border-left: 3px solid var(--crimson); padding: 0.25rem 0.75rem;
+      font-size: 0.85rem; color: var(--navy-light); letter-spacing: 0.05em;
+      margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;
     }
-    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; display: block; animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
     .hero h1 {
-      font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.08; font-weight: 900; margin-bottom: 1.5rem;
-      animation: fadeUp 0.8s ease forwards;
+      font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      line-height: 1.15; font-weight: 900; margin-bottom: 1.5rem; color: var(--navy-primary);
     }
-    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero h1 em { font-style: italic; font-weight: 700; color: var(--crimson); }
     .hero p {
-      color: var(--muted); font-size: 1.05rem; line-height: 1.8; max-width: 480px;
-      margin-bottom: 2.5rem; font-weight: 300;
+      color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 520px;
+      margin-bottom: 2.5rem; font-weight: 400;
     }
-    .hero-actions { display: flex; gap: 1rem; align-items: center; }
+    .hero-actions { display: flex; gap: 1.2rem; align-items: center; }
     .btn-primary {
-      background: var(--gold); color: var(--deep); padding: 0.9rem 2.2rem;
-      border: none; border-radius: 2px; font-weight: 500; font-size: 0.9rem;
-      letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
-      transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+      background: var(--navy-primary); color: var(--white); padding: 1rem 2.2rem;
+      border: none; border-radius: 4px; font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: all 0.3s;
     }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--crimson); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(139,30,63,0.2); }
     .btn-outline {
-      background: transparent; color: var(--white); padding: 0.9rem 2.2rem;
-      border: 1px solid rgba(255,255,255,0.25); border-radius: 2px; font-weight: 400;
-      font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
-      transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+      background: var(--white); color: var(--navy-primary); padding: 1rem 2.2rem;
+      border: 2px solid var(--navy-primary); border-radius: 4px; font-weight: 700;
+      font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: all 0.3s;
     }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline:hover { border-color: var(--crimson); color: var(--crimson); background: var(--bg-cream); }
 
-    .hero-visual {
-      position: relative; display: flex; justify-content: center; align-items: center;
-    }
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
     .hero-card-main {
-      background: var(--deep3); border: 1px solid rgba(201,151,58,0.2);
-      border-radius: 16px; padding: 2.5rem; width: 100%; max-width: 420px; position: relative;
-      animation: fadeIn 1s ease 0.3s both;
+      background: var(--white); border: 1px solid rgba(15,37,55,0.08);
+      border-radius: 12px; padding: 2.5rem; width: 100%; max-width: 440px; position: relative;
+      box-shadow: 0 30px 60px rgba(15,37,55,0.08); border-top: 6px solid var(--navy-primary);
     }
-    .hero-card-main::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--accent), var(--accent2));
-      border-radius: 16px 16px 0 0;
-    }
-    .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 1.5rem; }
     .stat-item { text-align: center; }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 700; }
-    .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem; }
-    .divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 1.5rem; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--crimson); font-weight: 900; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.25rem; font-weight: 700; }
     .program-list { display: flex; flex-direction: column; gap: 0.8rem; }
     .prog-item {
-      display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem;
-      background: rgba(255,255,255,0.04); border-radius: 8px; cursor: pointer;
-      transition: background 0.2s;
+      display: flex; align-items: center; gap: 1rem; padding: 0.85rem 1.25rem;
+      background: var(--bg-light); border-radius: 6px; cursor: pointer; transition: all 0.2s;
+      border-left: 3px solid transparent;
     }
-    .prog-item:hover { background: rgba(201,151,58,0.1); }
-    .prog-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .prog-name { font-size: 0.88rem; font-weight: 400; }
-    .prog-tag {
-      margin-left: auto; font-size: 0.7rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.06em;
-    }
+    .prog-item:hover { background: #FFFFFF; border-left-color: var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.05); transform: translateX(3px); }
+    .prog-name { font-size: 0.95rem; font-weight: 700; color: var(--navy-primary); }
+    .prog-tag { margin-left: auto; font-size: 0.75rem; color: var(--muted); font-weight: 500; }
     .floating-badge {
       position: absolute; top: -16px; right: -16px;
-      background: var(--accent2); color: white; padding: 0.6rem 1rem;
-      border-radius: 100px; font-size: 0.75rem; font-weight: 500; white-space: nowrap;
-      animation: float 3s ease-in-out infinite;
+      background: var(--gold); color: var(--navy-primary); padding: 0.6rem 1.2rem;
+      border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(197,160,89,0.4); text-transform: uppercase; letter-spacing: 0.05em;
     }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 
     /* MARQUEE */
-    .marquee-wrap {
-      border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 1.2rem 0; overflow: hidden; background: rgba(255,255,255,0.02);
-    }
-    .marquee-track {
-      display: flex; gap: 4rem; white-space: nowrap;
-      animation: marquee 20s linear infinite;
-    }
-    .marquee-track span { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .marquee-wrap { border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; padding: 1.2rem 0; overflow: hidden; background: var(--white); }
+    .marquee-track { display: flex; gap: 4rem; white-space: nowrap; animation: marquee 30s linear infinite; }
+    .marquee-track span { color: var(--navy-light); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
     .marquee-track .dot { color: var(--gold); }
     @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-    /* ABOUT */
-    .about { padding: 6rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .section-eyebrow { font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; }
-    .section-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; margin-bottom: 1.5rem; }
-    .section-h2 em { font-style: italic; color: var(--gold); }
-    .about-text { color: var(--muted); line-height: 1.9; font-weight: 300; margin-bottom: 2rem; }
-    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .value-card {
-      background: var(--deep3); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px;
-      padding: 1.25rem; transition: border-color 0.3s;
-    }
-    .value-card:hover { border-color: rgba(201,151,58,0.3); }
-    .value-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-    .value-title { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.4rem; }
-    .value-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
-
+    /* ABOUT / STORY */
+    .about { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: center; background: var(--white); }
+    .section-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); line-height: 1.2; margin-bottom: 1.5rem; color: var(--navy-primary); font-weight: 900; }
+    .section-h2 em { font-style: italic; color: var(--crimson); font-weight: 700; }
+    .about-text { color: var(--muted); line-height: 1.9; font-weight: 400; margin-bottom: 2.5rem; font-size: 1.05rem; }
+    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .value-card { border-left: 3px solid var(--gold); padding: 0.5rem 0 0.5rem 1.25rem; }
+    .value-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--navy-primary); }
+    .value-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
     .about-img-wrap { position: relative; }
     .img-card {
-      background: var(--deep3); border: 1px solid rgba(201,151,58,0.15); border-radius: 16px;
-      overflow: hidden; aspect-ratio: 4/5; display: flex; flex-direction: column;
-      justify-content: flex-end; position: relative;
+      background: var(--navy-primary); border-radius: 8px; overflow: hidden; aspect-ratio: 4/5;
+      display: flex; flex-direction: column; justify-content: flex-end; position: relative;
     }
-    .img-bg {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #1a2235 0%, #0d1525 50%, #162030 100%);
-      display: flex; align-items: center; justify-content: center; font-size: 6rem; opacity: 0.3;
-    }
-    .img-overlay {
-      position: relative; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    }
-    .img-quote { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; line-height: 1.6; margin-bottom: 1rem; }
-    .img-author { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; }
-
+    .img-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 10rem; opacity: 0.05; }
+    .img-overlay { position: relative; padding: 3rem; background: linear-gradient(transparent, rgba(15,37,55,0.95)); color: #FFFFFF; }
+    .img-quote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; color: var(--bg-cream); }
+    .img-author { font-size: 0.85rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
     .award-badge {
-      position: absolute; top: 2rem; right: -1rem;
-      background: var(--gold); color: var(--deep); padding: 0.75rem; border-radius: 12px;
-      text-align: center; font-weight: 700; font-size: 0.75rem; line-height: 1.3; min-width: 80px;
+      position: absolute; bottom: -20px; right: -20px; background: var(--gold); color: var(--navy-primary);
+      padding: 1.25rem; border-radius: 4px; text-align: center; font-weight: 700; font-size: 0.8rem;
+      line-height: 1.4; box-shadow: 0 10px 25px rgba(197,160,89,0.3); text-transform: uppercase; letter-spacing: 0.05em;
     }
 
     /* PROGRAMS */
-    .programs { padding: 6rem 3rem; background: var(--deep2); }
-    .programs-header { text-align: center; margin-bottom: 4rem; }
-    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .programs { padding: 8rem 3rem; background: var(--bg-light); border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
+    .programs-header { text-align: center; margin-bottom: 5rem; }
+    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .prog-card {
-      background: var(--deep); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px;
-      padding: 2rem; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden;
+      background: var(--white); border: 1px solid #E2E8F0; border-radius: 8px;
+      padding: 2.5rem; cursor: pointer; transition: all 0.3s; position: relative;
     }
-    .prog-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
-    }
-    .prog-card:nth-child(1)::after { background: var(--gold); }
-    .prog-card:nth-child(2)::after { background: var(--accent); }
-    .prog-card:nth-child(3)::after { background: var(--accent2); }
-    .prog-card:nth-child(4)::after { background: #9B87F5; }
-    .prog-card:nth-child(5)::after { background: #E8D74A; }
-    .prog-card:nth-child(6)::after { background: #4AB5E8; }
-    .prog-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
-    .prog-card:hover::after { transform: scaleX(1); }
-    .prog-card-icon {
-      width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center;
-      justify-content: center; font-size: 1.4rem; margin-bottom: 1.5rem;
-    }
-    .prog-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.75rem; }
-    .prog-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+    .prog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(15,37,55,0.06); border-color: var(--gold); }
+    .prog-card-icon { font-size: 2rem; margin-bottom: 1.5rem; display: inline-block; }
+    .prog-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.85rem; color: var(--navy-primary); font-weight: 700; }
+    .prog-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
     .prog-card-link {
-      display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem;
-      color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+      display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem;
+      color: var(--crimson); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;
     }
 
     /* ADMISSIONS */
-    .admissions { padding: 6rem 3rem; }
+    .admissions { padding: 8rem 3rem; background: var(--white); }
     .admissions-inner {
-      background: var(--deep3); border: 1px solid rgba(201,151,58,0.2); border-radius: 24px;
-      padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-      position: relative; overflow: hidden;
+      background: var(--bg-cream); border: 1px solid rgba(197,160,89,0.25); border-radius: 12px;
+      padding: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
     }
-    .admissions-inner::before {
-      content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(201,151,58,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .steps { display: flex; flex-direction: column; gap: 1.5rem; }
-    .step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .steps { display: flex; flex-direction: column; gap: 2rem; }
+    .step { display: flex; gap: 1.5rem; align-items: flex-start; }
     .step-num {
-      width: 36px; height: 36px; border-radius: 50%; background: rgba(201,151,58,0.15);
-      border: 1px solid rgba(201,151,58,0.4); display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--gold); flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 4px; background: var(--navy-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); flex-shrink: 0; font-weight: 700;
     }
-    .step-content h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.3rem; }
-    .step-content p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-    .adm-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .field { display: flex; flex-direction: column; gap: 0.4rem; }
-    .field label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+    .step-content h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--navy-primary); }
+    .step-content p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+    
+    .adm-form { display: flex; flex-direction: column; gap: 1.5rem; background: var(--white); padding: 3rem; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 15px 35px rgba(0,0,0,0.03); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .field label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--navy-light); font-weight: 700; }
     .field input, .field select {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px; padding: 0.75rem 1rem; color: var(--white);
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.3s;
+      background: var(--bg-light); border: 1px solid #CBD5E1;
+      border-radius: 4px; padding: 0.9rem 1.2rem; color: var(--text-main);
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: all 0.3s;
     }
-    .field input:focus, .field select:focus { border-color: var(--gold); }
-    .field input::placeholder { color: var(--muted); }
-    .field select option { background: var(--deep3); }
+    .field input:focus, .field select:focus { border-color: var(--navy-primary); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(15,37,55,0.05); }
     .submit-full {
-      background: var(--gold); color: var(--deep); padding: 0.9rem; border: none; border-radius: 8px;
-      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem; cursor: pointer;
-      text-transform: uppercase; letter-spacing: 0.08em; transition: background 0.3s;
+      background: var(--crimson); color: var(--white); padding: 1.1rem; border: none; border-radius: 4px;
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.3s;
     }
-    .submit-full:hover { background: var(--gold-light); }
+    .submit-full:hover { background: var(--navy-primary); }
 
     /* TESTIMONIALS */
-    .testimonials { padding: 6rem 3rem; background: var(--deep2); }
-    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .test-card {
-      background: var(--deep); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px;
-      padding: 2rem; transition: border-color 0.3s;
-    }
-    .test-card:hover { border-color: rgba(201,151,58,0.25); }
-    .test-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 2px; }
-    .test-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; color: rgba(250,250,248,0.9); }
-    .test-author { display: flex; align-items: center; gap: 0.75rem; }
+    .testimonials { padding: 8rem 3rem; background: var(--bg-light); }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .test-card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 8px; padding: 2.5rem; }
+    .test-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1.25rem; }
+    .test-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--navy-primary); }
+    .test-author { display: flex; align-items: center; gap: 1rem; }
     .test-avatar {
-      width: 40px; height: 40px; border-radius: 50%; background: rgba(201,151,58,0.2);
-      border: 1px solid rgba(201,151,58,0.3); display: flex; align-items: center; justify-content: center;
-      font-weight: 600; font-size: 0.85rem; color: var(--gold);
+      width: 46px; height: 46px; border-radius: 4px; background: var(--bg-cream);
+      border: 1px solid rgba(197,160,89,0.3); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.95rem; color: var(--navy-primary);
     }
-    .test-name { font-size: 0.88rem; font-weight: 500; }
-    .test-role { font-size: 0.75rem; color: var(--muted); }
+    .test-name { font-size: 0.95rem; font-weight: 700; color: var(--navy-primary); }
+    .test-role { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
 
     /* FOOTER */
-    .footer {
-      border-top: 1px solid rgba(255,255,255,0.07); padding: 4rem 3rem 2rem;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
-    }
-    .footer-brand p { color: var(--muted); font-size: 0.85rem; line-height: 1.8; margin-top: 1rem; max-width: 260px; }
-    .footer-col h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1.25rem; }
-    .footer-col a { display: block; color: var(--muted); font-size: 0.85rem; text-decoration: none; margin-bottom: 0.6rem; cursor: pointer; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); text-align: center; color: var(--muted); font-size: 0.8rem; }
+    .footer { background: var(--navy-primary); color: #FFFFFF; padding: 6rem 3rem 4rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; }
+    .footer-brand .nav-logo { color: #FFFFFF; }
+    .footer-brand .nav-logo span { color: var(--gold); }
+    .footer-brand p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.8; margin-top: 1.5rem; max-width: 280px; }
+    .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 1.75rem; font-weight: 700; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.7); font-size: 0.9rem; text-decoration: none; margin-bottom: 0.85rem; cursor: pointer; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom { background: #0A1B29; padding: 2rem 3rem; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
   </style>
 </head>
 <body>
 
 <div class="site">
+  <div class="top-bar">
+    <div>Nairobi, Kenya | +254 712 345 678</div>
+    <ul class="top-bar-links">
+      <li><a>Student Portal</a></li>
+      <li><a>Parent Portal</a></li>
+      <li><a>Alumni</a></li>
+      <li><a>Term Calendar</a></li>
+    </ul>
+  </div>
+
   <nav class="nav">
-    <div class="nav-logo">Kabiero <span>Academy</span></div>
+    <div class="nav-logo">🏛️ Kabiero <span>Academy</span></div>
     <ul class="nav-links">
       <li><a onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Home</a></li>
-      <li><a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Programs</a></li>
+      <li><a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Us</a></li>
+      <li><a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Academics</a></li>
       <li><a onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Admissions</a></li>
-      <li><a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a></li>
     </ul>
-    <button class="nav-cta" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Apply Now</button>
+    <button class="nav-cta" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Apply Online</button>
   </nav>
 
   <section style="position:relative;">
     <div class="hero">
       <div>
-        <div class="hero-badge">Est. 2005 · Nairobi, Kenya</div>
+        <div class="hero-badge">Excellence in Education Since 2005</div>
         <h1>Where <em>brilliance</em> meets boundless opportunity</h1>
-        <p>Kabiero Academy shapes thinkers, leaders, and innovators through world-class education grounded in values, creativity, and excellence.</p>
+        <p>Kabiero Academy shapes thinkers, leaders, and innovators through world-class education grounded in academic rigour, creativity, and values.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Begin Your Journey</button>
-          <button class="btn-outline" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Explore Programs</button>
+          <button class="btn-primary" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">Enroll Today</button>
+          <button class="btn-outline" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Curriculum Overview</button>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-card-main">
-          <div class="floating-badge">2025 Top School</div>
+          <div class="floating-badge">KNEC Top Ranked</div>
           <div class="stat-row">
             <div class="stat-item">
               <div class="stat-num">98%</div>
-              <div class="stat-label">Pass Rate</div>
+              <div class="stat-label">University Pass</div>
             </div>
             <div class="stat-item">
               <div class="stat-num">1,200+</div>
-              <div class="stat-label">Students</div>
+              <div class="stat-label">Enrollment</div>
             </div>
             <div class="stat-item">
               <div class="stat-num">60+</div>
-              <div class="stat-label">Faculty</div>
+              <div class="stat-label">Senior Faculty</div>
             </div>
           </div>
-          <div class="divider"></div>
           <div class="program-list">
             <div class="prog-item">
-              <div class="prog-dot" style="background:#C9973A"></div>
               <span class="prog-name">Primary School</span>
-              <span class="prog-tag">Grade 1–6</span>
+              <span class="prog-tag">CBC Grade 1–6</span>
             </div>
             <div class="prog-item">
-              <div class="prog-dot" style="background:#4FC3A1"></div>
               <span class="prog-name">Junior Secondary</span>
               <span class="prog-tag">Grade 7–9</span>
             </div>
             <div class="prog-item">
-              <div class="prog-dot" style="background:#E8734A"></div>
               <span class="prog-name">Senior Secondary</span>
               <span class="prog-tag">Grade 10–12</span>
             </div>
             <div class="prog-item">
-              <div class="prog-dot" style="background:#9B87F5"></div>
-              <span class="prog-name">STEM & Innovation</span>
-              <span class="prog-tag">All Levels</span>
+              <span class="prog-name">STEM Excellence</span>
+              <span class="prog-tag">Advanced Labs</span>
             </div>
           </div>
         </div>
@@ -360,60 +306,52 @@
 
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span>Excellence in Education</span><span class="dot">✦</span>
-      <span>STEM Innovation</span><span class="dot">✦</span>
-      <span>Character Development</span><span class="dot">✦</span>
-      <span>Sports & Arts</span><span class="dot">✦</span>
-      <span>Global Perspective</span><span class="dot">✦</span>
-      <span>Holistic Learning</span><span class="dot">✦</span>
-      <span>Future Leaders</span><span class="dot">✦</span>
-      <span>Community Values</span><span class="dot">✦</span>
-      <span>Excellence in Education</span><span class="dot">✦</span>
-      <span>STEM Innovation</span><span class="dot">✦</span>
-      <span>Character Development</span><span class="dot">✦</span>
-      <span>Sports & Arts</span><span class="dot">✦</span>
-      <span>Global Perspective</span><span class="dot">✦</span>
-      <span>Holistic Learning</span><span class="dot">✦</span>
-      <span>Future Leaders</span><span class="dot">✦</span>
-      <span>Community Values</span><span class="dot">✦</span>
+      <span>Academic Rigour</span><span class="dot">✦</span>
+      <span>Holistic Character Development</span><span class="dot">✦</span>
+      <span>State-of-the-Art STEM Innovation</span><span class="dot">✦</span>
+      <span>Elite Sports & Arts</span><span class="dot">✦</span>
+      <span>Global Perspectives</span><span class="dot">✦</span>
+      <span>Leadership Foundations</span><span class="dot">✦</span>
+      <span>Academic Rigour</span><span class="dot">✦</span>
+      <span>Holistic Character Development</span><span class="dot">✦</span>
+      <span>State-of-the-Art STEM Innovation</span><span class="dot">✦</span>
+      <span>Elite Sports & Arts</span><span class="dot">✦</span>
+      <span>Global Perspectives</span><span class="dot">✦</span>
+      <span>Leadership Foundations</span><span class="dot">✦</span>
     </div>
   </div>
 
   <section id="about" class="about">
     <div class="about-img-wrap">
       <div class="img-card">
-        <div class="img-bg">🎓</div>
+        <div class="img-bg">📜</div>
         <div class="img-overlay">
           <div class="img-quote">"Education is not the filling of a pail, but the lighting of a fire."</div>
-          <div class="img-author">— W.B. Yeats · Kabiero Motto</div>
+          <div class="img-author">— W.B. Yeats · Institutional Motto</div>
         </div>
       </div>
-      <div class="award-badge">Top<br>Rated<br>★★★★★</div>
+      <div class="award-badge">Ministry Approved<br>★★★★★<br>Accredited</div>
     </div>
     <div>
-      <div class="section-eyebrow">Our Story</div>
-      <h2 class="section-h2">Built on a <em>legacy</em> of inspiring greatness</h2>
-      <p class="about-text">Since 2005, Kabiero Academy has been Nairobi's most trusted institution for holistic, future-focused education. We don't just teach — we ignite curiosity, build character, and prepare every student to thrive in a complex, connected world.</p>
+      <div class="section-eyebrow">Our Legacy</div>
+      <h2 class="section-h2">Forming intellectual leaders and <em>principled</em> citizens</h2>
+      <p class="about-text">Since opening our doors in 2005, Kabiero Academy has remained one of Nairobi's premier co-educational day schools. We unite strict academic standards with rich extracurricular learning to ensure every student flourishes fully.</p>
       <div class="value-grid">
         <div class="value-card">
-          <div class="value-icon">🔬</div>
-          <div class="value-title">Inquiry-Led Learning</div>
-          <div class="value-desc">Students learn by doing — questioning, experimenting, discovering.</div>
+          <div class="value-title">Inquiry-Led Curriculum</div>
+          <div class="value-desc">Fostering deep analytical abilities through hands-on research and discovery.</div>
         </div>
         <div class="value-card">
-          <div class="value-icon">🌍</div>
-          <div class="value-title">Global Citizenship</div>
-          <div class="value-desc">Multilingual programs with international exchange opportunities.</div>
+          <div class="value-title">Global Standards</div>
+          <div class="value-desc">Multilingual pathways and modern instructional methodologies.</div>
         </div>
         <div class="value-card">
-          <div class="value-icon">🏆</div>
-          <div class="value-title">Award-Winning</div>
-          <div class="value-desc">Consistently ranked among Kenya's top performing schools.</div>
+          <div class="value-title">Values-First Culture</div>
+          <div class="value-desc">Instilling lifelong community values, responsibility, and strong integrity.</div>
         </div>
         <div class="value-card">
-          <div class="value-icon">❤️</div>
-          <div class="value-title">Nurturing Community</div>
-          <div class="value-desc">Small class sizes, dedicated mentors, and genuine care.</div>
+          <div class="value-title">Dedicated Mentorship</div>
+          <div class="value-desc">Generous teacher-to-student ratios supporting personalized care.</div>
         </div>
       </div>
     </div>
@@ -421,45 +359,45 @@
 
   <section id="programs" class="programs">
     <div class="programs-header">
-      <div class="section-eyebrow">What We Offer</div>
-      <h2 class="section-h2" style="color:var(--white)">Programs designed to <em>ignite</em> every passion</h2>
+      <div class="section-eyebrow">Academic Faculties</div>
+      <h2 class="section-h2">A robust foundation built for <em>higher</em> achievements</h2>
     </div>
     <div class="programs-grid">
       <div class="prog-card">
-        <div class="prog-card-icon" style="background:rgba(201,151,58,0.15)">📚</div>
+        <div class="prog-card-icon">📚</div>
         <h3>Primary Education</h3>
-        <p>A joyful, curiosity-driven foundation in literacy, numeracy, science, and the arts — building confident learners from day one.</p>
-        <div class="prog-card-link">Explore → </div>
+        <p>A rigorous, foundational approach focusing closely on foundational literacy, logic, computational thinking, and early arts exploration.</p>
+        <div class="prog-card-link">Syllabus Overview →</div>
       </div>
       <div class="prog-card">
-        <div class="prog-card-icon" style="background:rgba(79,195,161,0.15)">🔬</div>
-        <h3>Science & Technology</h3>
-        <p>State-of-the-art labs, coding bootcamps, robotics clubs, and environmental projects for the next generation of innovators.</p>
-        <div class="prog-card-link">Explore → </div>
+        <div class="prog-card-icon">🔬</div>
+        <h3>Science & Tech</h3>
+        <p>Advanced experimental chemistry, modern coding tracks, practical robotics instruction, and targeted environmental modules.</p>
+        <div class="prog-card-link">Syllabus Overview →</div>
       </div>
       <div class="prog-card">
-        <div class="prog-card-icon" style="background:rgba(232,115,74,0.15)">🎨</div>
-        <h3>Arts & Culture</h3>
-        <p>Visual arts, music, drama, and cultural studies — we believe creativity is as vital as mathematics.</p>
-        <div class="prog-card-link">Explore → </div>
+        <div class="prog-card-icon">🎨</div>
+        <h3>Creative Arts</h3>
+        <p>Comprehensive music theory classes, visual design studio coursework, and professional theater technique development.</p>
+        <div class="prog-card-link">Syllabus Overview →</div>
       </div>
       <div class="prog-card">
-        <div class="prog-card-icon" style="background:rgba(155,135,245,0.15)">⚽</div>
-        <h3>Sports & Athletics</h3>
-        <p>Football, netball, swimming, athletics and more — developing discipline, resilience, and the joy of healthy competition.</p>
-        <div class="prog-card-link">Explore → </div>
+        <div class="prog-card-icon">⚽</div>
+        <h3>Athletics Program</h3>
+        <p>Structured inter-scholastic competition leagues building character, physical fitness, and exceptional sportsmanship.</p>
+        <div class="prog-card-link">Syllabus Overview →</div>
       </div>
       <div class="prog-card">
-        <div class="prog-card-icon" style="background:rgba(232,215,74,0.15)">🌐</div>
-        <h3>Languages</h3>
-        <p>English, Kiswahili, French — fluency in multiple languages opens doors across the globe and deepens cultural empathy.</p>
-        <div class="prog-card-link">Explore → </div>
+        <div class="prog-card-icon">🌐</div>
+        <h3>Language Arts</h3>
+        <p>Fluency and professional literature studies covering English, Kiswahili, and foundational French courses.</p>
+        <div class="prog-card-link">Syllabus Overview →</div>
       </div>
       <div class="prog-card">
-        <div class="prog-card-icon" style="background:rgba(74,181,232,0.15)">👑</div>
-        <h3>Leadership Academy</h3>
-        <p>Dedicated mentorship, student council, community projects — forging tomorrow's changemakers with courage and vision.</p>
-        <div class="prog-card-link">Explore → </div>
+        <div class="prog-card-icon">👑</div>
+        <h3>Civic Leadership</h3>
+        <p>Empowering young minds through dedicated public speaking workshops, community projects, and governance councils.</p>
+        <div class="prog-card-link">Syllabus Overview →</div>
       </div>
     </div>
   </section>
@@ -467,29 +405,29 @@
   <section id="admissions" class="admissions">
     <div class="admissions-inner">
       <div>
-        <div class="section-eyebrow">Admissions</div>
-        <h2 class="section-h2">Your child's <em>extraordinary</em> future starts here</h2>
-        <p style="color:var(--muted); font-size:0.9rem; line-height:1.8; margin-bottom:2rem; font-weight:300;">We welcome applications year-round. Our admissions team will guide you through every step of the journey with warmth and care.</p>
+        <div class="section-eyebrow">Admissions Office</div>
+        <h2 class="section-h2">Securing your child's <em>academic</em> pathway</h2>
+        <p style="color:var(--muted); font-size:1rem; line-height:1.8; margin-bottom:2.5rem;">Applications for the current academic year are assessed on a rolling basis. Our registrar's desk assists family onboarding clearly and efficiently.</p>
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <h4>Submit your enquiry</h4>
-              <p>Fill in the form and our team will reach out within 24 hours.</p>
+              <h4>Formal Intake Enquiry</h4>
+              <p>Submit your student criteria details securely using our formal registrar desk form.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <h4>School tour & assessment</h4>
-              <p>Visit our campus and let your child experience the Kabiero difference.</p>
+              <h4>Assessment & Interview</h4>
+              <p>Schedule a targeted standard baseline readiness evaluation on campus.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <h4>Receive your offer</h4>
-              <p>We'll confirm placement and walk you through fees and onboarding.</p>
+              <h4>Enrollment Review</h4>
+              <p>Following verification, finalize your official class seat allocation structure.</p>
             </div>
           </div>
         </div>
@@ -498,27 +436,27 @@
         <div class="adm-form">
           <div class="form-row">
             <div class="field">
-              <label>Parent's name</label>
+              <label>Parent/Guardian Legal Name</label>
               <input type="text" placeholder="Jane Wanjiru">
             </div>
             <div class="field">
-              <label>Phone number</label>
+              <label>Primary Phone Contact</label>
               <input type="text" placeholder="+254 7XX XXX XXX">
             </div>
           </div>
           <div class="field">
-            <label>Email address</label>
+            <label>Secure Email Address</label>
             <input type="email" placeholder="jane@email.com">
           </div>
           <div class="form-row">
             <div class="field">
-              <label>Child's name</label>
+              <label>Child's Full Name</label>
               <input type="text" placeholder="Full name">
             </div>
             <div class="field">
-              <label>Grade applying for</label>
+              <label>Intended Grade Level</label>
               <select>
-                <option>Select grade</option>
+                <option>Select entry grade</option>
                 <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
                 <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
                 <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
@@ -526,7 +464,7 @@
               </select>
             </div>
           </div>
-          <button class="submit-full" onclick="this.textContent='Application Submitted ✓'; this.style.background='#4FC3A1'">Submit Application</button>
+          <button class="submit-full" onclick="this.textContent='Enquiry Received ✓'; this.style.background='#0F2537'">Submit Registration Request</button>
         </div>
       </div>
     </div>
@@ -534,29 +472,29 @@
 
   <section class="testimonials">
     <div style="text-align:center; margin-bottom:4rem;">
-      <div class="section-eyebrow">Testimonials</div>
-      <h2 class="section-h2" style="color:var(--white)">Voices from our <em>community</em></h2>
+      <div class="section-eyebrow">Institutional Feedback</div>
+      <h2 class="section-h2">Testimonials from our <em>school</em> community</h2>
     </div>
     <div class="test-grid">
       <div class="test-card">
         <div class="test-stars">★★★★★</div>
-        <div class="test-quote">"Kabiero didn't just educate my daughter — it gave her a voice, a passion, and the confidence to use both."</div>
+        <div class="test-quote">"Kabiero challenged my daughter academically while developing her civic character uniquely. Splendid environment."</div>
         <div class="test-author">
           <div class="test-avatar">GN</div>
-          <div><div class="test-name">Grace Njeri</div><div class="test-role">Parent · Class of 2024</div></div>
+          <div><div class="test-name">Grace Njeri</div><div class="test-role">Parent · Class of 2024 Council</div></div>
         </div>
       </div>
       <div class="test-card">
         <div class="test-stars">★★★★★</div>
-        <div class="test-quote">"The teachers here genuinely care. My son went from struggling to topping his class in one year. Transformational."</div>
+        <div class="test-quote">"The scientific laboratories and math instruction here are peerless. My son has thrived consistently across terms."</div>
         <div class="test-author">
           <div class="test-avatar">DO</div>
-          <div><div class="test-name">David Omondi</div><div class="test-role">Parent · Grade 9</div></div>
+          <div><div class="test-name">David Omondi</div><div class="test-role">Parent · Grade 9 Cohort</div></div>
         </div>
       </div>
       <div class="test-card">
         <div class="test-stars">★★★★★</div>
-        <div class="test-quote">"Kabiero Academy shaped who I am. The leadership program alone changed my entire trajectory."</div>
+        <div class="test-quote">"The foundational leadership training programs directly prepared me for the rigours of my higher degree tracks."</div>
         <div class="test-author">
           <div class="test-avatar">AK</div>
           <div><div class="test-name">Amina Kamau</div><div class="test-role">Alumni · University of Nairobi</div></div>
@@ -567,35 +505,33 @@
 
   <footer class="footer">
     <div class="footer-brand">
-      <div class="nav-logo">Kabiero <span>Academy</span></div>
-      <p>Shaping brilliant minds and building tomorrow's leaders in the heart of Nairobi since 2005.</p>
+      <div class="nav-logo">🏛️ Kabiero Academy</div>
+      <p>Building brilliant academic minds and nurturing tomorrow's visionary leaders in the heart of Nairobi since 2005.</p>
     </div>
     <div class="footer-col">
-      <h5>Programs</h5>
-      <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Primary School</a>
+      <h5>Academic Framework</h5>
+      <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Primary Department</a>
       <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Junior Secondary</a>
       <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Senior Secondary</a>
-      <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">STEM</a>
-      <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">Arts & Sports</a>
+      <a onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">STEM Lab Track</a>
     </div>
     <div class="footer-col">
-      <h5>School</h5>
-      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Us</a>
-      <a>Faculty</a>
-      <a>Events</a>
-      <a>News</a>
-      <a>Alumni</a>
+      <h5>Governance</h5>
+      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Our Legacy</a>
+      <a>Faculty Board</a>
+      <a>School Board Policies</a>
+      <a>Alumni Association</a>
     </div>
     <div class="footer-col">
-      <h5>Contact</h5>
-      <a>Nairobi, Kenya</a>
+      <h5>Campus Contact</h5>
+      <a>Nairobi Head Office</a>
       <a>+254 712 345 678</a>
-      <a>info@kabiero.ac.ke</a>
-      <a>Mon–Fri 8am–5pm</a>
+      <a>registrar@kabiero.ac.ke</a>
+      <a>Hours: 7:30 AM – 4:30 PM</a>
     </div>
   </footer>
-  <div class="footer-bottom" style="background:var(--deep); padding:1.5rem 3rem; border-top:1px solid rgba(255,255,255,0.07); text-align:center; color:var(--muted); font-size:0.78rem;">
-    &copy; 2025 Kabiero Academy &middot; All rights reserved &middot; Nairobi, Kenya
+  <div class="footer-bottom">
+    &copy; 2026 Kabiero Academy &middot; Ministry Accredited Co-Educational Institution &middot; Nairobi, Kenya
   </div>
 </div>
 
