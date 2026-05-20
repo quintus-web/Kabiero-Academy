@@ -55,7 +55,7 @@
       background: var(--crimson); color: var(--white); padding: 0.75rem 1.75rem;
       border: none; border-radius: 4px; font-family: 'DM Sans', sans-serif;
       font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
-      cursor: pointer; transition: all 0.3s;
+      cursor: pointer; transition: all 0.3s; white-space: nowrap;
     }
     .nav-cta:hover { background: #6F1531; transform: translateY(-1px); }
 
@@ -72,7 +72,7 @@
       margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 4.2rem);
       line-height: 1.15; font-weight: 900; margin-bottom: 1.5rem; color: var(--navy-primary);
     }
     .hero h1 em { font-style: italic; font-weight: 700; color: var(--crimson); }
@@ -80,21 +80,17 @@
       color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 520px;
       margin-bottom: 2.5rem; font-weight: 400;
     }
-    .hero-actions { display: flex; gap: 1.2rem; align-items: center; }
-    .btn-primary {
-      background: var(--navy-primary); color: var(--white); padding: 1rem 2.2rem;
-      border: none; border-radius: 4px; font-weight: 700; font-size: 0.9rem;
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; }
+    .btn-primary, .btn-outline {
+      padding: 1rem 2.2rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem;
       letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: all 0.3s;
     }
+    .btn-primary { background: var(--navy-primary); color: var(--white); border: none; }
     .btn-primary:hover { background: var(--crimson); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(139,30,63,0.2); }
-    .btn-outline {
-      background: var(--white); color: var(--navy-primary); padding: 1rem 2.2rem;
-      border: 2px solid var(--navy-primary); border-radius: 4px; font-weight: 700;
-      font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: all 0.3s;
-    }
+    .btn-outline { background: var(--white); color: var(--navy-primary); border: 2px solid var(--navy-primary); }
     .btn-outline:hover { border-color: var(--crimson); color: var(--crimson); background: var(--bg-cream); }
 
-    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
     .hero-card-main {
       background: var(--white); border: 1px solid rgba(15,37,55,0.08);
       border-radius: 12px; padding: 2.5rem; width: 100%; max-width: 440px; position: relative;
@@ -129,14 +125,14 @@
 
     /* ABOUT / STORY */
     .about { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: center; background: var(--white); }
-    .section-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); line-height: 1.2; margin-bottom: 1.5rem; color: var(--navy-primary); font-weight: 900; }
+    .section-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.2; margin-bottom: 1.5rem; color: var(--navy-primary); font-weight: 900; }
     .section-h2 em { font-style: italic; color: var(--crimson); font-weight: 700; }
     .about-text { color: var(--muted); line-height: 1.9; font-weight: 400; margin-bottom: 2.5rem; font-size: 1.05rem; }
     .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .value-card { border-left: 3px solid var(--gold); padding: 0.5rem 0 0.5rem 1.25rem; }
     .value-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--navy-primary); }
     .value-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
-    .about-img-wrap { position: relative; }
+    .about-img-wrap { position: relative; width: 100%; }
     .img-card {
       background: var(--navy-primary); border-radius: 8px; overflow: hidden; aspect-ratio: 4/5;
       display: flex; flex-direction: column; justify-content: flex-end; position: relative;
@@ -154,7 +150,7 @@
     /* PROGRAMS */
     .programs { padding: 8rem 3rem; background: var(--bg-light); border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; }
     .programs-header { text-align: center; margin-bottom: 5rem; }
-    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
     .prog-card {
       background: var(--white); border: 1px solid #E2E8F0; border-radius: 8px;
       padding: 2.5rem; cursor: pointer; transition: all 0.3s; position: relative;
@@ -203,7 +199,7 @@
 
     /* TESTIMONIALS */
     .testimonials { padding: 8rem 3rem; background: var(--bg-light); }
-    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
     .test-card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 8px; padding: 2.5rem; }
     .test-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1.25rem; }
     .test-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--navy-primary); }
@@ -225,6 +221,26 @@
     .footer-col a { display: block; color: rgba(255,255,255,0.7); font-size: 0.9rem; text-decoration: none; margin-bottom: 0.85rem; cursor: pointer; transition: color 0.2s; }
     .footer-col a:hover { color: var(--gold-light); }
     .footer-bottom { background: #0A1B29; padding: 2rem 3rem; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+    /* RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION) */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+      .about { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 4rem; }
+      .admissions-inner { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 4rem; }
+      .footer { grid-template-columns: 1fr 1fr; gap: 3rem; padding: 4rem 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { display: none; } /* Hide heavy top bar elements on mobile */
+      .nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; } /* Standard modern mobile cleanup */
+      .hero, .about, .programs, .admissions, .testimonials { padding: 4rem 1.5rem; }
+      .value-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
+      .adm-form { padding: 1.75rem; }
+      .footer { grid-template-columns: 1fr; gap: 2.5rem; }
+      .award-badge { right: 0; bottom: -10px; }
+    }
 
     @keyframes fadeUp { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
   </style>
@@ -278,7 +294,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-num">60+</div>
-              <div class="stat-label">Senior Faculty</div>
+              <div class="stat-label">Faculty</div>
             </div>
           </div>
           <div class="program-list">
